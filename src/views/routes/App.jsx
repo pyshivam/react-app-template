@@ -1,8 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import loadable from '@loadable/component';
 import { CssBaseline } from '@material-ui/core';
 
-import { Home } from 'views/pages';
+// Create new bundle file for Home
+const Home = loadable(() => import('views/pages/Home'));
 
 const App = (props) => {
 	return (
