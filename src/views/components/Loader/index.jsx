@@ -1,38 +1,24 @@
 import React, { Component } from 'react';
-import {
-	CssBaseline,
-	Fade,
-	CircularProgress,
-	withStyles,
-} from '@material-ui/core';
-
-const styles = (theme) => ({
-	root: {
-		display: 'flex',
-		justifyContent: 'center',
-		alignItems: 'center',
-		height: '300px',
-		width: '100%',
-		flexDirection: 'column',
-	},
-	loader: {
-		transitionDelay: '400ms',
-	},
-});
+import { CircularProgress, Box } from '@material-ui/core';
 
 class Loader extends Component {
 	render() {
-		const { classes } = this.props;
 		return (
-			<CssBaseline>
-				<div className={classes.root}>
-					<Fade in={true} className={classes.loader} unmountOnExit>
-						<CircularProgress />
-					</Fade>
-				</div>
-			</CssBaseline>
+			<Box
+				display='flex'
+				justifyContent='center'
+				alignItems='center'
+				height='300px'
+				width='100%'
+				flexDirection='column'>
+				<CircularProgress
+					style={{
+						transitionDelay: '400ms',
+					}}
+				/>
+			</Box>
 		);
 	}
 }
 
-export default withStyles(styles)(Loader);
+export default Loader;
